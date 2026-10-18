@@ -46,7 +46,7 @@ function extractVideoLinks(text,baseUrl){
  if(embed&&!found.has(url))found.set(url,{title:title||'Video from scanned page',url,embed})
  };
  const md=/\[([^\]]{1,180})\]\((https?:\/\/[^\s)]+)\)/gi;let m;while((m=md.exec(text))!==null)add(m[2],m[1]);
- const urls=text.match(/https?:\/\/[^\s"'<>\\])}]+/gi)||[];for(const u of urls)add(u);
+ const urls=text.match(/https?:\/\/[^\s"'<>]+/gi)||[];for(const u of urls)add(u);
  return [...found.values()];
 }
 $('saveScrapeUrls').onclick=()=>{const urls=$('scrapeUrls').value.split('\n').map(s=>s.trim()).filter(Boolean);if(urls.some(s=>!safeHttpUrl(s))){$('scrapeStatus').textContent='Only valid http:// and https:// URLs can be saved.';return}config.scrapeUrls=urls;save();$('scrapeStatus').textContent='Saved '+urls.length+' source URL(s).';};
