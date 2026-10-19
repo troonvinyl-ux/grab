@@ -1,0 +1,2 @@
+# Optional: candidate title/URL must contain at least one of these terms.
+# Leave empty to accept all candidates that pass the other filters.
