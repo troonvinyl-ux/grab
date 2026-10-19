@@ -1,0 +1,1 @@
+# Put one trusted adults-only domain per line. YouTube is always blocked.
